@@ -40,9 +40,9 @@ online example: http://react-component.github.io/tree/examples/
 
 
 ## install
-
-[![rc-tree](https://nodei.co/npm/rc-tree.png)](https://www.npmjs.com/package/rc-tree-simbiox)
-
+```
+npm i rc-tree-simbiox --save
+```
 ## Usage
 
 see examples
