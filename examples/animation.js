@@ -1,8 +1,8 @@
 /* eslint no-console:0 */
-import 'rc-tree/assets/index.less';
+import 'rc-tree-simbiox/assets/index.less';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Tree, { TreeNode } from 'rc-tree';
+import Tree, { TreeNode } from 'rc-tree-simbiox';
 import cssAnimation from 'css-animation';
 
 const STYLE = `

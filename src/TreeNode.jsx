@@ -225,7 +225,7 @@ class TreeNode extends React.Component {
 
     let canRenderSwitcher = true;
     const content = props.title;
-    const customIcon = props.icon;
+    const customIcon = props.icon || null;
     let newChildren = this.renderChildren(props);
     if (!newChildren || newChildren === props.children) {
       // content = newChildren;

@@ -1,11 +1,11 @@
 /* eslint react/no-multi-comp:0 */
 /* eslint no-console:0 */
-import 'rc-tree/assets/index.less';
+import 'rc-tree-simbiox/assets/index.less';
 import './dropdown.less';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-import Tree, { TreeNode } from 'rc-tree';
+import Tree, { TreeNode } from 'rc-tree-simbiox';
 import Trigger from 'rc-trigger';
 import { gData } from './util';
 

@@ -1,9 +1,9 @@
 /* eslint no-console:0 */
-import 'rc-tree/assets/index.less';
+import 'rc-tree-simbiox/assets/index.less';
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-import Tree, { TreeNode } from 'rc-tree';
+import Tree, { TreeNode } from 'rc-tree-simbiox';
 import Gen from './big-data-generator';
 
 class Demo extends React.Component {
