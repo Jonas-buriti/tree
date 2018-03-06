@@ -52,6 +52,8 @@ class Demo extends React.Component {
       <label onClick={(e) => e.stopPropagation()}><input type="checkbox" /> checked</label> &nbsp;
       <span style={{ color: 'red' }} onClick={this.onDel}>Delete</span>
     </span>);
+    const customIcon = (<span>Jonas</span>);
+
     return (<div style={{ margin: '0 20px' }}>
       <h2>simple</h2>
       <Tree
@@ -63,7 +65,7 @@ class Demo extends React.Component {
         onSelect={this.onSelect} onCheck={this.onCheck}
       >
         <TreeNode title="parent 1" key="0-0">
-          <TreeNode title={customLabel} key="0-0-0">
+          <TreeNode icon={customIcon} title={customLabel} key="0-0-0">
             <TreeNode title="leaf" key="0-0-0-0" />
             <TreeNode title="leaf" key="0-0-0-1" />
           </TreeNode>

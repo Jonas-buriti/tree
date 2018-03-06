@@ -6,6 +6,8 @@ import toArray from 'rc-util/lib/Children/toArray';
 import { contextTypes } from './Tree';
 
 const defaultTitle = '---';
+const defaultIcon = null;
+
 
 class TreeNode extends React.Component {
   static propTypes = {
@@ -21,6 +23,7 @@ class TreeNode extends React.Component {
   static contextTypes = contextTypes;
 
   static defaultProps = {
+    icon: defaultIcon,
     title: defaultTitle,
   };
 
@@ -161,7 +164,7 @@ class TreeNode extends React.Component {
     }
     return (
       <span
-        className={classNames(checkboxCls) }
+        className={classNames(checkboxCls)}
         onClick={this.onCheck}
       >{customEle}</span>);
   }
@@ -222,6 +225,7 @@ class TreeNode extends React.Component {
 
     let canRenderSwitcher = true;
     const content = props.title;
+    const customIcon = props.icon;
     let newChildren = this.renderChildren(props);
     if (!newChildren || newChildren === props.children) {
       // content = newChildren;
@@ -242,9 +246,14 @@ class TreeNode extends React.Component {
       [`${prefixCls}-icon__${iconState}`]: true,
     };
 
+    const customIconCls = `${prefixCls}-customIcon`;
+
     const selectHandle = () => {
       const icon = (props.showIcon || props.loadData && this.state.dataLoading) ?
-        <span className={classNames(iconEleCls)}></span> : null;
+        <span
+          className={customIcon ? customIconCls : classNames(iconEleCls)}
+        >{customIcon || ''}
+        </span> : null;
       const title = <span className={`${prefixCls}-title`}>{content}</span>;
       const wrap = `${prefixCls}-node-content-wrapper`;
       const domProps = {
@@ -315,7 +324,7 @@ class TreeNode extends React.Component {
     return (
       <li
         {...liProps}
-        className={classNames(props.className, disabledCls, dragOverCls, filterCls) }
+        className={classNames(props.className, disabledCls, dragOverCls, filterCls)}
       >
         {canRenderSwitcher ? this.renderSwitcher(props, expandedState) : renderNoopSwitcher()}
         {props.checkable ? this.renderCheckbox(props) : null}
